@@ -3,7 +3,7 @@ services:
   - docker
 env:
   global:
-    - IMAGE_NAME=adria/test
+    - IMAGE_NAME=adriaq/test
     - REGISTRY_USER=adriaq
     - REGISTRY_PASS=Tuf4Nn9u2aaQR8fBqnFx6tguYyjS2JMw
  
