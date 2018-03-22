@@ -10,7 +10,7 @@ env:
 build:
   - docker build . --tag "$IMAGE_NAME" 
 
-before_deploy:
+before_deployment:
   - docker login -u "$REGISTRY_USER" --password-stdin "$REGISTRY_PASS"
-deploy:
+deployment:
   docker push "${IMAGE_NAME}:latest" 
