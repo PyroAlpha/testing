@@ -13,6 +13,6 @@ script:
 after_script:
   - docker images
  
-deploy:
+publish:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
   - docker push "${IMAGE_NAME}:latest" 
