@@ -7,17 +7,10 @@ env:
     - REGISTRY_USER=adriaq
     - REGISTRY_PASS=Tuf4Nn9u2aaQR8fBqnFx6tguYyjS2JMw
 
-script:
+build:
   - docker build . --tag "$IMAGE_NAME" 
-
-after_script:
-  - docker images
 
 before_deploy:
   - docker login -u "$REGISTRY_USER" --password-stdin "$REGISTRY_PASS"
-  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
 deploy:
-  provider: script
-  script: docker push "${IMAGE_NAME}:latest" 
-  on:
-    branch: master
+  docker push "${IMAGE_NAME}:latest" 
